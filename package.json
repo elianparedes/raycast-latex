@@ -13,24 +13,20 @@
     {
       "name": "search-latex-symbols",
       "title": "Search LaTex Symbols",
-      "description": "",
+      "description": "Quickly find LaTex symbols",
       "mode": "view"
-    },
-    {
-      "name": "write-latex-equation",
-      "title": "Write LaTex equation",
-      "description": "",
-      "mode": "no-view"
     }
   ],
   "dependencies": {
     "@raycast/api": "^1.82.5",
-    "@raycast/utils": "^1.16.3"
+    "@raycast/utils": "^1.16.3",
+    "mathjax-full": "^3.2.2"
   },
   "devDependencies": {
     "@raycast/eslint-config": "^1.0.8",
+    "@types/mathjax-node": "^2.1.0",
     "@types/node": "20.8.10",
-    "@types/react": "18.3.3",
+    "@types/react": "^18.3.3",
     "eslint": "^8.57.0",
     "prettier": "^3.3.3",
     "typescript": "^5.4.5"

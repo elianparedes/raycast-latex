@@ -1,9 +1,13 @@
+import { Grid } from "@raycast/api";
 import { useState } from "react";
-import { ActionPanel, Action, Icon, Grid, Color } from "@raycast/api";
+import { SymbolsSection } from "./components";
+import { SymbolItem } from "./components/symbol-item";
+import { symbols } from "./constants";
 
 export default function Command() {
   const [columns, setColumns] = useState(5);
   const [isLoading, setIsLoading] = useState(true);
+
   return (
     <Grid
       columns={columns}
@@ -25,18 +29,17 @@ export default function Command() {
       }
     >
       {!isLoading &&
-        Object.entries(Icon).map(([name, icon]) => (
-          <Grid.Item
-            key={name}
-            content={{ value: { source: icon, tintColor: Color.PrimaryText }, tooltip: name }}
-            title={name}
-            subtitle={icon}
-            actions={
-              <ActionPanel>
-                <Action.CopyToClipboard content={icon} />
-              </ActionPanel>
-            }
-          />
+        Object.entries(symbols).map(([group, { symbols, ...other }]) => (
+          <SymbolsSection
+            key={group}
+            title={group}
+            subtitle={symbols.length.toString()}
+            columns={other.layout?.columns || 8}
+          >
+            {symbols.map((symbol) => (
+              <SymbolItem key={symbol.syntax} symbol={symbol} />
+            ))}
+          </SymbolsSection>
         ))}
     </Grid>
   );

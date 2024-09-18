@@ -100,7 +100,7 @@ export const symbols: SymbolsDictionary = {
       { name: "Partial derivative", syntax: "\\partial" },
       { name: "Does not exist", syntax: "\\nexists" },
       { name: "Empty set", syntax: "\\emptyset" },
-      { name: "Empty set (alternative)", syntax: "\\varnothing" },
+      { name: "Empty set", syntax: "\\varnothing" },
       { name: "Power set", syntax: "\\wp" },
       { name: "Complement", syntax: "\\complement" },
       { name: "Negation", syntax: "\\neg" },
@@ -135,6 +135,148 @@ export const symbols: SymbolsDictionary = {
       { name: "Box times", syntax: "\\boxtimes" },
       { name: "Equivalent", syntax: "\\equiv" },
       { name: "Congruent", syntax: "\\cong" },
+    ],
+  },
+  "Math Operators": {
+    symbols: [
+      { name: "cos", syntax: "\\cos" },
+      { name: "csc", syntax: "\\csc" },
+      { name: "exp", syntax: "\\exp" },
+      { name: "ker", syntax: "\\ker" },
+      { name: "limsup", syntax: "\\limsup" },
+      { name: "min", syntax: "\\min" },
+      { name: "sinh", syntax: "\\sinh" },
+      { name: "arcsin", syntax: "\\arcsin", keywords: ["arcsen"] },
+      { name: "cosh", syntax: "\\cosh" },
+      { name: "deg", syntax: "\\deg" },
+      { name: "gcd", syntax: "\\gcd" },
+      { name: "lg", syntax: "\\lg" },
+      { name: "ln", syntax: "\\ln" },
+      { name: "Pr", syntax: "\\Pr" },
+      { name: "sup", syntax: "\\sup" },
+      { name: "arctan", syntax: "\\arctan" },
+      { name: "cot", syntax: "\\cot" },
+      { name: "det", syntax: "\\det" },
+      { name: "hom", syntax: "\\hom" },
+      { name: "lim", syntax: "\\lim" },
+      { name: "log", syntax: "\\log" },
+      { name: "sec", syntax: "\\sec" },
+      { name: "tan", syntax: "\\tan" },
+      { name: "arg", syntax: "\\arg" },
+      { name: "coth", syntax: "\\coth" },
+      { name: "dim", syntax: "\\dim" },
+      { name: "liminf", syntax: "\\liminf" },
+      { name: "max", syntax: "\\max" },
+      { name: "sin", syntax: "\\sin", keywords: ["sen"] },
+      { name: "tanh", syntax: "\\tanh" },
+    ],
+  },
+  Delimiters: {
+    symbols: [
+      { name: "Left Parenthesis", syntax: "(", keywords: ["("] },
+      { name: "Right Parenthesis", syntax: ")", keywords: [")"] },
+      { name: "Left Bracket", syntax: "[", keywords: ["["] },
+      { name: "Right Bracket", syntax: "]", keywords: ["]"] },
+      { name: "Left Brace", syntax: "\\{", keywords: ["{"] },
+      { name: "Right Brace", syntax: "\\}", keywords: ["}"] },
+      { name: "Left Angle Bracket", syntax: "\\langle", keywords: ["<"] },
+      { name: "Right Angle Bracket", syntax: "\\rangle", keywords: [">"] },
+      { name: "Left Floor", syntax: "\\lfloor" },
+      { name: "Right Floor", syntax: "\\rfloor" },
+      { name: "Left Ceiling", syntax: "\\lceil" },
+      { name: "Right Ceiling", syntax: "\\rceil" },
+      { name: "Vertical Line", syntax: "|", keywords: ["|"] },
+      { name: "Double Vertical Line", syntax: "\\|", keywords: ["||"] },
+      { name: "Backslash", syntax: "\\backslash", keywords: ["\\"] },
+      { name: "Left Corner", syntax: "\\ulcorner" },
+      { name: "Right Corner", syntax: "\\urcorner" },
+      { name: "Lower Left Corner", syntax: "\\llcorner" },
+      { name: "Lower Right Corner", syntax: "\\lrcorner" },
+    ],
+  },
+  Matrices: {
+    layout: {
+      columns: 6,
+    },
+    symbols: [
+      {
+        name: "Plain",
+        keywords: ["matrix"],
+        syntax: `\\begin{matrix}
+                1 & 2 \\\\
+                a & b
+                \\end{matrix}`,
+      },
+      {
+        name: "Parentheses",
+        keywords: ["matrix"],
+        syntax: `\\begin{pmatrix}
+                1 & 2 \\\\
+                a & b
+                \\end{pmatrix}`,
+      },
+      {
+        name: "Brackets",
+        keywords: ["matrix"],
+        syntax: `\\begin{bmatrix}
+                1 & 2 \\\\
+                a & b
+                \\end{bmatrix}`,
+      },
+      {
+        name: "Braces",
+        keywords: ["matrix"],
+        syntax: `\\begin{Bmatrix}
+                1 & 2 \\\\
+                a & b
+                \\end{Bmatrix}`,
+      },
+      {
+        name: "Pipes",
+        keywords: ["matrix"],
+        syntax: `\\begin{vmatrix}
+                1 & 2 \\\\
+                a & b
+                \\end{vmatrix}`,
+      },
+      {
+        name: "Double pipes",
+        keywords: ["matrix"],
+        syntax: `\\begin{Vmatrix}
+                1 & 2 \\\\
+                a & b
+                \\end{Vmatrix}`,
+      },
+    ],
+  },
+  Integrals: {
+    symbols: [
+      { name: "Integral", syntax: "\\int" },
+      { name: "Double Integral", syntax: "\\iint" },
+      { name: "Triple Integral", syntax: "\\iiint" },
+    ],
+  },
+  Fractions: {
+    symbols: [{ name: "Fraction", syntax: "\\frac{a}{b}" }],
+  },
+  Binomials: {
+    symbols: [
+      {
+        name: "Binomial",
+        syntax: "\\binom{a}{b}",
+      },
+      {
+        name: "Brackets",
+        keywords: ["binomial"],
+        syntax: "{n\\brack k}",
+      },
+    ],
+  },
+  "Square Roots": {
+    symbols: [
+      { name: "Square root", syntax: "\\sqrt{a}" },
+      { name: "Cubic root", syntax: "\\sqrt[3]{a}" },
+      { name: "N root", syntax: "\\sqrt[n]{a}" },
     ],
   },
 };

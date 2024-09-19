@@ -10,6 +10,7 @@ export default function Command() {
 
   return (
     <Grid
+      searchBarPlaceholder="Search symbols"
       inset={Grid.Inset.Large}
       isLoading={isLoading}
       searchBarAccessory={

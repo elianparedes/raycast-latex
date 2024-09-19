@@ -5,42 +5,46 @@ import { SymbolItem } from "./components/symbol-item";
 import { symbols } from "./constants";
 
 export default function Command() {
-  const [columns, setColumns] = useState(5);
+  const [group, setGroup] = useState<"All" | keyof typeof symbols>("All");
   const [isLoading, setIsLoading] = useState(true);
 
   return (
     <Grid
-      columns={columns}
       inset={Grid.Inset.Large}
       isLoading={isLoading}
       searchBarAccessory={
         <Grid.Dropdown
-          tooltip="Grid Item Size"
+          tooltip="Filter"
           storeValue
           onChange={(newValue) => {
-            setColumns(parseInt(newValue));
+            setGroup(newValue);
             setIsLoading(false);
           }}
         >
-          <Grid.Dropdown.Item title="Large" value={"3"} />
-          <Grid.Dropdown.Item title="Medium" value={"5"} />
-          <Grid.Dropdown.Item title="Small" value={"8"} />
+          {["All", ...Object.keys(symbols)].map((key) => (
+            <Grid.Dropdown.Item key={key} value={key} title={key} />
+          ))}
         </Grid.Dropdown>
       }
     >
       {!isLoading &&
-        Object.entries(symbols).map(([group, { symbols, ...other }]) => (
-          <SymbolsSection
-            key={group}
-            title={group}
-            subtitle={symbols.length.toString()}
-            columns={other.layout?.columns || 8}
-          >
-            {symbols.map((symbol) => (
-              <SymbolItem key={symbol.syntax} symbol={symbol} />
-            ))}
-          </SymbolsSection>
-        ))}
+        Object.entries(symbols)
+          .filter(([g]) => {
+            if (group === "All") return true;
+            return g === group;
+          })
+          .map(([group, { symbols, ...other }]) => (
+            <SymbolsSection
+              key={group}
+              title={group}
+              subtitle={symbols.length.toString()}
+              columns={other.layout?.columns || 8}
+            >
+              {symbols.map((symbol) => (
+                <SymbolItem key={symbol.syntax} symbol={symbol} />
+              ))}
+            </SymbolsSection>
+          ))}
     </Grid>
   );
 }

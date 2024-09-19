@@ -1,8 +1,8 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "latex",
-  "title": "LaTex",
-  "description": "Quickly find LaTex symbols",
+  "title": "LaTeX",
+  "description": "Quickly find LaTeX symbols",
   "icon": "extension-icon.png",
   "author": "elianparedes",
   "categories": [
@@ -12,8 +12,8 @@
   "commands": [
     {
       "name": "search-latex-symbols",
-      "title": "Search LaTex Symbols",
-      "description": "Quickly find LaTex symbols",
+      "title": "Search LaTeX Symbols",
+      "description": "Quickly find LaTeX symbols",
       "mode": "view"
     }
   ],
